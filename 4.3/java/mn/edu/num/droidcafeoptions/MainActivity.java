@@ -10,22 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-/*
- * Answers to questions
- *
- * Q1 - What is the name of the file in which you create options menu items?
- * A1 - menu_main.xml
- *
- * Q2 - Which method is called when an options menu item is clicked?
- * A2 - onOptionsItemSelected(MenuItem item)
- *
- * Q3 - Which of the following statements sets the title for an alert dialog?
- * A3 - myAlertBuilder.setTitle("Alert");
- *
- * Q4 - Where do you create a DialogFragment for a date picker?
- * A4 - In the onCreateDialog() method in the extension of DialogFragment.
- *
- */
 
 
 public class MainActivity extends AppCompatActivity {
@@ -52,20 +36,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+       
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+ 
 
         switch (item.getItemId()) {
             case R.id.action_order:
-//                displayToast(getString(R.string.action_order_message));
                 Intent intent = new Intent(MainActivity.this, OrderActivity.class);
                 intent.putExtra(EXTRA_MESSAGE, mOrderMessage);
                 startActivity(intent);
@@ -80,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 displayToast(getString(R.string.action_contact_message));
                 return true;
             default:
-                // Do nothing
+    
         }
 
         return super.onOptionsItemSelected(item);
